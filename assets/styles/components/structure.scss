@@ -1,0 +1,25 @@
+.flipper {
+
+  > h2 {
+    margin: 0 0 60px;
+  }
+
+  .row {
+    margin-bottom: 60px;
+
+    [class|=col]:last-of-type {
+      padding: 60px;
+      margin: 0 -15px;
+    }
+
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+
+      [class|=col]:last-of-type {
+        background: $brand-primary;
+      }
+
+    }
+  }
+
+}

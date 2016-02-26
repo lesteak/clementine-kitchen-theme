@@ -28,7 +28,7 @@
     "fonts": "assets/fonts/"
   },
   "config": {
-    "devUrl": "http://tofino.dev",
-    "stagingUrl": "http://tofino.lambdacreatives.com"
+    "devUrl": "http://clementine.dev",
+    "stagingUrl": "http://clementine.stage.yadda.co.uk"
   }
 }
