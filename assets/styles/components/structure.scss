@@ -30,11 +30,12 @@
 
   .overlay-content {
     @include valign;
+    padding: 0 rem(15);
   }
 
   .faux-button {
     font-size: rem(28);
-    font-family: $headings-font-family;
+    font-family: "Parker";
     letter-spacing: rem(5);
     padding: rem(16) rem(48);
     border: 3px solid;

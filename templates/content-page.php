@@ -63,6 +63,18 @@ $team = get_field('team-row');
                     <div class="col-xs-12 col-md-6">
                       <h2><?php echo $title; ?></h2>
                       <?php echo $content; ?>
+                      <?php
+                        if( have_rows('team-row') ):
+                          while ( have_rows('team-row') ) : the_row();
+                            $title = get_sub_field('team-name');
+                            $image = get_sub_field('team-image');
+                            $content = get_sub_field('team-content');
+                      ?>
+                        <p><strong><?php echo $title; ?></strong> <?php echo $content; ?></p>
+                      <?php
+                          endwhile;
+                        endif;
+                      ?>
                     </div> <!-- col -->
                   </div> <!-- row -->
                 <?php endif; ?>

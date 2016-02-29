@@ -27,8 +27,12 @@ h2 {
   }
 
   h2 {
-    letter-spacing: rem(15);
-    font-size: rem(80);
+    letter-spacing: rem(9);
+    font-size: rem(48);
+    @include media-breakpoint-up(lg) {
+      letter-spacing: rem(15);
+      font-size: rem(80);
+    }
   }
 
   .lead {
