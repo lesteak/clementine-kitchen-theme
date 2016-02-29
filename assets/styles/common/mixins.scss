@@ -17,8 +17,15 @@
 
 // Return a rem value based on px. Uses $font-size-root from BS4 variables file.
 @function rem($px-value) {
-  $root-value: strip-unit($font-size-root);
+  $root-value: strip-unit(16);
   $value: strip-unit($px-value);
   $rem-value: ($value / $root-value) + rem;
   @return $rem-value;
+}
+
+@mixin valign {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
 }

@@ -16,7 +16,7 @@
   </div>
 <![endif]-->
 
-<nav class="navbar navbar-light <?php echo \Tofino\ThemeOptions\menu_fixed(); ?> <?php echo \Tofino\ThemeOptions\menu_position(); ?>">
+<nav class="navbar navbar-light text-xs-center <?php echo \Tofino\ThemeOptions\menu_fixed(); ?> <?php echo \Tofino\ThemeOptions\menu_position(); ?>">
   <button class="navbar-toggler hidden-sm-up collapsed" type="button" data-toggle="collapse" data-target="#main-menu">
     <div class="bar-wrapper">
       <span class="bar"></span>
@@ -25,7 +25,9 @@
     </div>
     <span class="sr-only"><?php _e('Toggle Navigation Button', 'tofino'); ?></span>
   </button>
-  <a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php echo esc_attr(bloginfo('name')); ?>"><?php echo bloginfo('name'); ?></a>
+  <a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php echo esc_attr(bloginfo('name')); ?>"><img src="<?php echo get_template_directory_uri() . '/dist/svg/logo.svg'; ?>" alt="<?php echo bloginfo('name'); ?>"></a>
+
+  <img src="<?php echo get_template_directory_uri() . '/dist/svg/nav-curve-upper.svg'; ?>" class="img-full curve-upper">
   <div id="main-menu" class="collapse navbar-toggleable-xs navbar-wrapper">
     <?php
     if (has_nav_menu('primary_navigation')) :
@@ -44,6 +46,7 @@
     ?>
   </div>
 </nav>
+<img src="<?php echo get_template_directory_uri() . '/dist/svg/nav-curve-lower.svg'; ?>" class="img-full curve-lower">
 
 <?php if (ot_get_option('footer_sticky_checkbox')) : ?>
   <div class="wrapper">
