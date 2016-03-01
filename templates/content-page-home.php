@@ -46,10 +46,10 @@ $slideshow = get_field('slideshow');
                 <span class="faux-button">Learn More</span>
               </div>
             </a>
-          </div>
+          </div> <!-- col -->
         <?php endforeach;
         wp_reset_postdata();?>
-      </div>
-    </div>
+      </div> <!-- row -->
+    </div> <!-- container -->
   </main>
 <?php endwhile; ?>
