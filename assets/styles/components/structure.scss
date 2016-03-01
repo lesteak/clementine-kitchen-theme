@@ -6,6 +6,7 @@
   position: relative;
   color: #fff;
   margin: 0 0 rem(60);
+  display: block;
 
   .hero-content {
     @include valign;
@@ -22,6 +23,12 @@
   }
 }
 
+.container {
+  & + .hero {
+    margin: 0;
+  }
+}
+
 .overlay {
   position: relative;
   color: #fff;
@@ -31,6 +38,18 @@
   .overlay-content {
     @include valign;
     padding: 0 rem(15);
+  }
+
+  h2 {
+    font-family: "Parker";
+    font-weight: 400;
+    line-height: .8;
+    letter-spacing: rem(9);
+    font-size: rem(48);
+    @include media-breakpoint-up(lg) {
+      letter-spacing: rem(15);
+      font-size: rem(80);
+    }
   }
 
   .faux-button {
@@ -46,6 +65,14 @@
     .faux-button {
       display: inline-block;
     }
+  }
+}
+
+.col-sm-offset-2.text-xs-center {
+  margin-bottom: rem(60);
+
+  p {
+    margin: 0;
   }
 }
 
@@ -71,6 +98,32 @@
       }
 
     }
+  }
+
+}
+
+.contact-form {
+  label {
+    font-weight: 700;
+    font-size: rem(18);
+  }
+
+  .form-control {
+    font-size: rem(18);
+    background: $brand-primary;
+    border: 0;
+    line-height: 2.25rem;
+  }
+
+  .btn-primary {
+    color: $gray-dark;
+    background: transparent;
+    text-transform: uppercase;
+    font-size: rem(28);
+    font-family: "Parker";
+    letter-spacing: rem(5);
+    padding: rem(8) rem(90) rem(4);
+    border: 3px solid;
   }
 
 }

@@ -85,9 +85,41 @@ $team = get_field('team-row');
               endif;
             ?>
             </div> <!-- flipper -->
+        </div> <!-- col -->
+      </div> <!-- row -->
+    </div> <!-- container -->
 
-        </div>
-      </div>
-    </div>
+    <?php
+      $pagelist = get_pages('sort_column=menu_order&sort_order=asc');
+      $pages = array();
+      foreach ($pagelist as $page) {
+        $pages[] += $page->ID;
+      }
+
+      $current = array_search($post->ID, $pages);
+      $nextID = $pages[$current+1];
+
+      $args = array(
+        'post_type' => 'page',
+        'include' => $nextID
+      );
+
+      $posts = get_posts( $args );
+
+      foreach ( $posts as $post ) : setup_postdata( $post );
+      $hero = get_field('hero-image');
+      if($hero):
+    ?>
+      <a class="hero" href="<?php the_permalink(); ?>">
+        <img src="<?php echo $hero; ?>" alt="<?php the_title(); ?>" class="img-fluid">
+
+        <div class="hero-content text-xs-center">
+          <h1><?php the_title(); ?></h1>
+        </div> <!-- hero-content -->
+      </a> <!-- hero -->
+    <?php endif;
+      endforeach;
+      wp_reset_postdata();
+    ?>
   </main>
 <?php endwhile; ?>

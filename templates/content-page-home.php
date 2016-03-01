@@ -19,23 +19,21 @@ $slideshow = get_field('slideshow');
     </div> <!-- hero -->
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-xs-center">
             <?php the_content(); ?>
-
         </div> <!-- col -->
       </div> <!-- row -->
       <div class="row">
         <?php
 
-
         $args = array(
         'post_type' => 'page',
-        'exclude' => $post->ID
+        'exclude' => $post->ID,
+        'posts_per_page' => 4
         );
 
-        $myposts = get_posts( $args );
-        foreach ( $myposts as $post ) : setup_postdata( $post );
+        $posts = get_posts( $args );
+        foreach ( $posts as $post ) : setup_postdata( $post );
         $thumb = get_field('hero-thumb');
         ?>
           <div class="col-xs-12 col-md-6">
