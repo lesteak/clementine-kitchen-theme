@@ -27,10 +27,11 @@
   </button>
   <a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php echo esc_attr(bloginfo('name')); ?>">
     <img src="<?php echo get_template_directory_uri() . '/dist/svg/logo-clementine.svg'; ?>" alt="<?php echo bloginfo('name'); ?>" class="hidden-md-up">
-    <img src="<?php echo get_template_directory_uri() . '/dist/svg/logo.svg'; ?>" alt="<?php echo bloginfo('name'); ?>" class="hidden-md-down">
+    <img src="<?php echo get_template_directory_uri() . '/dist/svg/logo.svg'; ?>" alt="<?php echo bloginfo('name'); ?>" class="hidden-sm-down">
   </a>
-
-  <img src="<?php echo get_template_directory_uri() . '/dist/svg/nav-curve-upper.svg'; ?>" class="img-full curve-upper hidden-sm-down">
+  <div class="curve-upper hidden-sm-down">
+    <img src="<?php echo get_template_directory_uri() . '/dist/svg/nav-curve-upper.svg'; ?>" class="img-full">
+  </div>
   <div id="main-menu" class="collapse navbar-toggleable-sm navbar-wrapper">
     <?php
     if (has_nav_menu('primary_navigation')) :
@@ -49,7 +50,6 @@
     ?>
   </div>
 </nav>
-<img src="<?php echo get_template_directory_uri() . '/dist/svg/nav-curve-lower.svg'; ?>" class="img-full curve-lower hidden-sm-down">
 
 <?php if (ot_get_option('footer_sticky_checkbox')) : ?>
   <div class="wrapper">

@@ -30,7 +30,7 @@
 
     img {
       display: inline-block;
-      @include media-breakpoint-down(md) {
+      @include media-breakpoint-down(sm) {
         width: rem(27.5);
       }
 
@@ -39,6 +39,11 @@
 
   .curve-upper {
     background: $brand-primary;
+
+    img {
+      position: relative;
+      top: rem(-1);
+    }
   }
 
   .navbar-wrapper {
