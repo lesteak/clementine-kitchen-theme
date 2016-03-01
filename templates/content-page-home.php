@@ -8,10 +8,11 @@ $slideshow = get_field('slideshow');
       <div class="hero-images">
         <?php if( $slideshow ): ?>
           <?php foreach( $slideshow as $image ): ?>
-            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
+            <img src="<?php echo $image['sizes']['hero']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
           <?php endforeach; ?>
         <?php endif; ?>
       </div> <!-- hero-images -->
+      <div class="hero-overlay">&nbsp;</div>
       <div class="hero-content text-xs-center">
         <p class="lead"><?php echo $subhead; ?></p>
         <h1><?php echo $headline; ?></h1>
@@ -34,13 +35,14 @@ $slideshow = get_field('slideshow');
 
         $posts = get_posts( $args );
         foreach ( $posts as $post ) : setup_postdata( $post );
-        $thumb = get_field('hero-thumb');
+        $thumb = get_field('hero-thumb')['sizes']['large'];
         ?>
           <div class="col-xs-12 col-md-6">
             <a href="<?php the_permalink(); ?>" class="text-uppercase overlay text-xs-center">
               <?php if($thumb): ?>
                 <img src="<?php echo $thumb; ?>" alt="<?php the_title(); ?>" class="img-fluid">
               <?php endif; ?>
+              <div class="overlay-grad"></div>
               <div class="overlay-content">
                 <h2><?php the_title(); ?></h2>
                 <span class="faux-button">Learn More</span>

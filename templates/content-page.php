@@ -1,12 +1,12 @@
 <?php while (have_posts()) : the_post();
-$hero = get_field('hero-image');
+$hero = get_field('hero-image')['sizes']['hero'];
 $team = get_field('team-row');
 ?>
   <main>
     <?php if($hero): ?>
       <div class="hero">
         <img src="<?php echo $hero; ?>" alt="<?php the_title(); ?>" class="img-fluid">
-
+        <div class="hero-overlay">&nbsp;</div>
         <div class="hero-content text-xs-center">
           <h1><?php the_title(); ?></h1>
         </div> <!-- hero-content -->
@@ -41,7 +41,7 @@ $team = get_field('team-row');
                     <div class="col-xs-12 col-md-6">
                       <?php if( $images ): ?>
                         <?php foreach( $images as $image ): ?>
-                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
+                          <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
                         <?php endforeach; ?>
                       <?php endif; ?>
                     </div> <!-- col -->
@@ -55,7 +55,7 @@ $team = get_field('team-row');
                     <div class="col-xs-12 col-md-6">
                       <?php if( $images ): ?>
                         <?php foreach( $images as $image ): ?>
-                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
+                          <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
                         <?php endforeach; ?>
                       <?php endif; ?>
                     </div> <!-- col -->
@@ -107,12 +107,12 @@ $team = get_field('team-row');
       $posts = get_posts( $args );
 
       foreach ( $posts as $post ) : setup_postdata( $post );
-      $hero = get_field('hero-image');
+      $hero = get_field('hero-image')['sizes']['hero'];
       if($hero):
     ?>
-      <a class="hero" href="<?php the_permalink(); ?>">
+      <a class="hero hidden-sm-down" href="<?php the_permalink(); ?>">
         <img src="<?php echo $hero; ?>" alt="<?php the_title(); ?>" class="img-fluid">
-
+        <div class="hero-overlay">&nbsp;</div>
         <div class="hero-content text-xs-center">
           <h1><?php the_title(); ?></h1>
         </div> <!-- hero-content -->

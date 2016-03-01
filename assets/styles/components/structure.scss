@@ -1,3 +1,9 @@
+@-moz-document url-prefix() {
+  .img-fluid {
+    width: 100%;
+  }
+}
+
 .img-full {
   width: 100%;
 }
@@ -7,6 +13,24 @@
   color: #fff;
   margin: 0 0 rem(60);
   display: block;
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0,0,0,0.4)), color-stop(100%, rgba(0,0,0,0.1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
+  }
 
   .hero-content {
     @include valign;
@@ -39,6 +63,18 @@
   display: block;
   margin: 0 0 rem(30);
 
+  .overlay-grad {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+  }
+
+
   .overlay-content {
     @include valign;
     padding: 0 rem(15);
@@ -70,6 +106,10 @@
   }
 
   &:hover {
+    .overlay-grad {
+      background: rgba(0,0,0,0.6);
+    }
+
     .faux-button {
       display: inline-block;
     }
@@ -143,6 +183,7 @@
     letter-spacing: rem(5);
     padding: rem(8) rem(90) rem(4);
     border: 3px solid;
+    margin: 0 0 rem(30);
   }
 
 }

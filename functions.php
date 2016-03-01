@@ -50,3 +50,5 @@ function missing_dist_error_notice() {
     <p><?php _e('/dist directory not found. You probably want to run npm install and gulp on the command line.', 'tofino'); ?></p>
   </div><?php
 }
+
+add_image_size( 'hero', 1980, 750, true );

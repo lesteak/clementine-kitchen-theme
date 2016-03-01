@@ -43,6 +43,9 @@
     img {
       position: relative;
       top: rem(-1);
+      @include media-breakpoint-only(md) {
+        top: rem(-3);
+      }
     }
   }
 
