@@ -15,8 +15,12 @@
   h1 {
     margin: 0;
     font-family: "Parker";
-    letter-spacing: rem(16);
-    font-size: rem(86);
+    letter-spacing: rem(9);
+    font-size: rem(48);
+    @include media-breakpoint-up(md) {
+      letter-spacing: rem(16);
+      font-size: rem(86);
+    }
     text-transform: uppercase;
     font-weight: 400;
     line-height: 1;
@@ -56,9 +60,13 @@
     font-size: rem(28);
     font-family: "Parker";
     letter-spacing: rem(5);
-    padding: rem(16) rem(48);
+    padding: rem(8) rem(24);
     border: 3px solid;
-    display: none;
+    display: inline-block;
+    @include media-breakpoint-up(lg) {
+      padding: rem(16) rem(48);
+      display: none;
+    }
   }
 
   &:hover {
@@ -79,20 +87,31 @@
 .flipper {
 
   > h2 {
-    margin: 0 0 rem(60);
+    margin: 0 0 rem(30);
+    @include media-breakpoint-up(md) {
+      margin: 0 0 rem(60);
+    }
   }
 
   .row {
-    margin-bottom: rem(60);
+    margin-bottom: rem(30);
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(60);
+    }
 
     [class|=col]:last-of-type {
-      padding: rem(60);
-      margin: 0 rem(-15);
+      padding: rem(15);
+      @include media-breakpoint-up(md) {
+        margin: 0 rem(-15);
+        padding: rem(60);
+      }
     }
 
     &:nth-of-type(even) {
       flex-direction: row-reverse;
-
+      @include media-breakpoint-down(sm) {
+        background: $brand-primary;
+      }
       [class|=col]:last-of-type {
         background: $brand-primary;
       }

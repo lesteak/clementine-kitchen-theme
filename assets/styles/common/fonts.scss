@@ -11,8 +11,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  letter-spacing: rem(4);
+  letter-spacing: rem(2.5);
+  @include media-breakpoint-up(md) {
+    letter-spacing: rem(4);
+  }
 }
+
+@include font-size(h2, 24, 32, 32, 32, 38)
 
 .home {
   h1, h2, h3, h4, h5, h6 {

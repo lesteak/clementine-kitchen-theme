@@ -14,7 +14,7 @@ $hero = get_field('hero-image');
 
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12 col-lg-8">
             <?php the_content(); ?>
         </div> <!-- col -->
       </div> <!-- row -->
