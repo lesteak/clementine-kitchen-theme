@@ -17,51 +17,32 @@ $team = get_field('team-row');
       <div class="row">
         <div class="col-xs-12">
 
-
-
             <?php the_content(); ?>
 
-            <div class="flipper">
-
             <?php
-              if( have_rows('row') ):
+              if( have_rows('row') ): ?>
+              <div class="flipper">
+              <?php
                 while ( have_rows('row') ) : the_row();
                   $title = get_sub_field('title');
                   $images = get_sub_field('image');
                   $content = get_sub_field('content');
-            ?>
-                <?php if($title && !$images && !$content): ?>
-                    <h2 class="text-xs-center"><?php echo $title; ?></h2>
-                <?php elseif($title && $images && !$content): ?>
 
-                <?php elseif($title && $content && !$images): ?>
-
-                <?php elseif($images && $content && !$title): ?>
+                if($images && $content):
+                  $isFlex = count($images) == 1; ?>
                   <div class="row row-flip">
-                    <div class="col-xs-12 col-md-6">
-                      <?php if( $images ): ?>
-                        <?php foreach( $images as $image ): ?>
-                          <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
-                        <?php endforeach; ?>
-                      <?php endif; ?>
+                    <div class="col-xs-12 col-md-6<?php echo ($isFlex ? " img-flex" : ""); ?>">
+                      <?php foreach( $images as $image ): if ($isFlex) : ?>
+                        <div class="faux-image" style="background: url(<?php echo $image['sizes']['large']; ?>) center / cover no-repeat;"><img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid hidden-md-up"></div>
+                      <?php else : ?>
+                        <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
+                      <?php endif; endforeach; ?>
                     </div> <!-- col -->
 
                     <div class="col-xs-12 col-md-6">
-                      <?php echo $content; ?>
-                    </div> <!-- col -->
-                  </div> <!-- row -->
-                <?php elseif($title && $images && $content): ?>
-                  <div class="row row-flip">
-                    <div class="col-xs-12 col-md-6">
-                      <?php if( $images ): ?>
-                        <?php foreach( $images as $image ): ?>
-                          <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
-                        <?php endforeach; ?>
+                      <?php if ($title): ?>
+                        <h2><?php echo $title; ?></h2>
                       <?php endif; ?>
-                    </div> <!-- col -->
-
-                    <div class="col-xs-12 col-md-6">
-                      <h2><?php echo $title; ?></h2>
                       <?php echo $content; ?>
                       <?php
                         if( have_rows('team-row') ):
@@ -77,14 +58,14 @@ $team = get_field('team-row');
                       ?>
                     </div> <!-- col -->
                   </div> <!-- row -->
+                <?php elseif($title): ?>
+                  <h2 class="text-xs-center"><?php echo $title; ?></h2>
                 <?php endif; ?>
-
-
             <?php
-                endwhile;
-              endif;
-            ?>
+              endwhile; ?>
             </div> <!-- flipper -->
+            <?php
+              endif; ?>
         </div> <!-- col -->
       </div> <!-- row -->
     </div> <!-- container -->
