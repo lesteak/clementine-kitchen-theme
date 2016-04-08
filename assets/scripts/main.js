@@ -77,6 +77,14 @@
     // Home page
     home: {
       init: function() {
+        $('.hero-images').slick({
+          infinite: true,
+          autoplay: true,
+          autoplaySpeed: 3500,
+          fade: true,
+          cssEase: 'linear',
+          dots: true
+        });
       }
     },
   };

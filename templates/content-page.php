@@ -1,5 +1,5 @@
 <?php while (have_posts()) : the_post();
-$hero = get_field('hero-image')['sizes']['hero'];
+$hero = get_field('hero-image')['sizes']['letterbox'];
 $team = get_field('team-row');
 ?>
   <main>
