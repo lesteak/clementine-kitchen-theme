@@ -1,6 +1,8 @@
 <?php while (have_posts()) : the_post();
 $hero = get_field('hero-image')['sizes']['letterbox'];
 $team = get_field('team-row');
+$profile_run = false;
+$count = 0;
 ?>
   <main>
     <?php if($hero): ?>
@@ -14,10 +16,18 @@ $team = get_field('team-row');
     <?php endif; ?>
 
     <div class="container">
+      <?php if(the_content()) : ?>
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-xs-center">
+            <div class="intro-tag">
+              <?php the_content(); ?>
+            </div>
+          </div> <!-- col -->
+        </div> <!-- row -->
+      <?php endif; ?>
+
       <div class="row">
         <div class="col-xs-12">
-
-            <?php the_content(); ?>
 
             <?php
               if( have_rows('row') ): ?>
@@ -27,16 +37,14 @@ $team = get_field('team-row');
                   $title = get_sub_field('title');
                   $images = get_sub_field('image');
                   $content = get_sub_field('content');
+                  $count ++;
 
-                if($images && $content):
-                  $isFlex = count($images) == 1; ?>
-                  <div class="row row-flip">
-                    <div class="col-xs-12 col-md-6<?php echo ($isFlex ? " img-flex" : ""); ?>">
-                      <?php foreach( $images as $image ): if ($isFlex) : ?>
+                if($images && $content): ?>
+                  <div class="row row-flip flex-stretch-row">
+                    <div class="col-xs-12 col-md-6 flex-stretch-col">
+                      <?php foreach( $images as $image ) : ?>
                         <div class="faux-image" style="background: url(<?php echo $image['sizes']['large']; ?>) center / cover no-repeat;"><img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid hidden-md-up"></div>
-                      <?php else : ?>
-                        <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
-                      <?php endif; endforeach; ?>
+                      <?php endforeach; ?>
                     </div> <!-- col -->
 
                     <div class="col-xs-12 col-md-6">
@@ -45,13 +53,21 @@ $team = get_field('team-row');
                       <?php endif; ?>
                       <?php echo $content; ?>
                       <?php
-                        if( have_rows('team-row') ):
+                        if( have_rows('team-row') && !$profile_run):
                           while ( have_rows('team-row') ) : the_row();
                             $title = get_sub_field('team-name');
-                            $image = get_sub_field('team-image');
+                            $image = get_sub_field('team-image')['sizes']['medium'];
                             $content = get_sub_field('team-content');
+                            $profile_run = true;
                       ?>
-                        <p><strong><?php echo $title; ?></strong> <?php echo $content; ?></p>
+                      <div class="row profile">
+                        <div class="col-xs-5 col-md-12 col-xl-5">
+                          <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>">
+                        </div>
+                        <div class="col-xs-7 col-md-12 col-xl-7">
+                          <h4><?php echo $title; ?></h4><?php echo $content; ?>
+                        </div>
+                      </div>
                       <?php
                           endwhile;
                         endif;
@@ -88,7 +104,7 @@ $team = get_field('team-row');
       $posts = get_posts( $args );
 
       foreach ( $posts as $post ) : setup_postdata( $post );
-      $hero = get_field('hero-image')['sizes']['hero'];
+      $hero = get_field('hero-image')['sizes']['letterbox'];
       if($hero):
     ?>
       <a class="hero hidden-sm-down" href="<?php the_permalink(); ?>">

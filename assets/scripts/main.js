@@ -72,6 +72,17 @@
             }
           });
         }
+
+        $('.slick-wrap').slick({
+          infinite: true,
+          autoplay: true,
+          autoplaySpeed: 2500,
+          fade: true,
+          cssEase: 'linear',
+          dots: false,
+          arrows: false
+        });
+
       }
     },
     // Home page
@@ -83,7 +94,8 @@
           autoplaySpeed: 3500,
           fade: true,
           cssEase: 'linear',
-          dots: true
+          dots: false,
+          arrows: false
         });
       }
     },

@@ -26,8 +26,8 @@
     <span class="sr-only"><?php _e('Toggle Navigation Button', 'tofino'); ?></span>
   </button>
   <a class="navbar-brand" href="<?php echo home_url(); ?>" title="<?php echo esc_attr(bloginfo('name')); ?>">
-    <img src="<?php echo get_template_directory_uri() . '/dist/svg/logo-clementine.svg'; ?>" alt="<?php echo bloginfo('name'); ?>" class="hidden-md-up">
-    <img src="<?php echo get_template_directory_uri() . '/dist/svg/logo.svg'; ?>" alt="<?php echo bloginfo('name'); ?>" class="hidden-sm-down">
+    <img src="<?php echo get_template_directory_uri() . '/dist/svg/logo-clementine.svg'; ?>" alt="<?php echo bloginfo('name'); ?>" class="hidden-md-up logo-small">
+    <img src="<?php echo get_template_directory_uri() . '/dist/svg/logo.svg'; ?>" alt="<?php echo bloginfo('name'); ?>" class="hidden-sm-down logo-large">
   </a>
   <div class="curve-upper hidden-sm-down">
     <img src="<?php echo get_template_directory_uri() . '/dist/svg/nav-curve-upper.svg'; ?>" class="img-full">

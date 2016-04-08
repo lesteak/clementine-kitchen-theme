@@ -21,7 +21,9 @@ $slideshow = get_field('slideshow');
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-xs-center">
+          <div class="intro-tag">
             <?php the_content(); ?>
+          </div>
         </div> <!-- col -->
       </div> <!-- row -->
       <div class="row">

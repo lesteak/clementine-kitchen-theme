@@ -7,7 +7,7 @@ $args = array(
 );
 $page = get_posts( $args );
 foreach ( $page as $post ) : setup_postdata( $post );
-  $hero = get_field('hero-image')['sizes']['hero'];
+  $hero = get_field('hero-image')['sizes']['letterbox'];
 ?>
   <main>
     <?php if($hero): ?>
@@ -81,7 +81,7 @@ foreach ( $page as $post ) : setup_postdata( $post );
       $posts = get_posts( $args );
 
       foreach ( $posts as $post ) : setup_postdata( $post );
-      $hero = get_field('hero-image')['sizes']['hero'];
+      $hero = get_field('hero-image')['sizes']['letterbox'];
       if($hero):
     ?>
       <a class="hero" href="<?php the_permalink(); ?>">

@@ -35,6 +35,11 @@
       }
 
     }
+
+    .logo-large {
+      width:300px;
+      height:122px;
+    }
   }
 
   .curve-upper {
@@ -99,6 +104,7 @@
       .nav-link {
         padding: rem(23) 0 rem(19);
         color: #000;
+        font-size:rem(16);
 
         &:hover,
         &:focus,
