@@ -203,13 +203,15 @@
 
 }
 
-.flex-stretch-row {
-  display: flex;
-}
-.flex-stretch-col {
-  display: flex;
-  .faux-image {
-    flex:1 100%;
+@include media-breakpoint-up(md) {
+  .flex-stretch-row {
+    display: flex;
+  }
+  .flex-stretch-col {
+    display: flex;
+    .faux-image {
+      flex:1 100%;
+    }
   }
 }
 .slick-slider {
