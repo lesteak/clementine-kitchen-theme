@@ -1,8 +1,8 @@
 <?php while (have_posts()) : the_post();
 $hero = get_field('hero-image')['sizes']['letterbox'];
 $team = get_field('team-row');
-$profile_run = false;
-$count = 0;
+$count = 1;
+$position = get_field('position');
 ?>
   <main>
     <?php if($hero): ?>
@@ -16,9 +16,9 @@ $count = 0;
     <?php endif; ?>
 
     <div class="container">
-      <?php if(the_content()) : ?>
+      <?php if(get_the_content()) : ?>
         <div class="row">
-          <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-xs-center">
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-xs-center">
             <div class="intro-tag">
               <?php the_content(); ?>
             </div>
@@ -28,7 +28,6 @@ $count = 0;
 
       <div class="row">
         <div class="col-xs-12">
-
             <?php
               if( have_rows('row') ): ?>
               <div class="flipper">
@@ -52,26 +51,6 @@ $count = 0;
                         <h2><?php echo $title; ?></h2>
                       <?php endif; ?>
                       <?php echo $content; ?>
-                      <?php
-                        if( have_rows('team-row') && !$profile_run):
-                          while ( have_rows('team-row') ) : the_row();
-                            $title = get_sub_field('team-name');
-                            $image = get_sub_field('team-image')['sizes']['medium'];
-                            $content = get_sub_field('team-content');
-                            $profile_run = true;
-                      ?>
-                      <div class="row profile">
-                        <div class="col-xs-5 col-md-12 col-xl-5">
-                          <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>">
-                        </div>
-                        <div class="col-xs-7 col-md-12 col-xl-7">
-                          <h4><?php echo $title; ?></h4><?php echo $content; ?>
-                        </div>
-                      </div>
-                      <?php
-                          endwhile;
-                        endif;
-                      ?>
                     </div> <!-- col -->
                   </div> <!-- row -->
                 <?php elseif($title): ?>
@@ -84,6 +63,26 @@ $count = 0;
               endif; ?>
         </div> <!-- col -->
       </div> <!-- row -->
+
+      <?php
+        if( have_rows('team-row')): ?>
+          <div class="row profile">
+            <?php while ( have_rows('team-row') ) : the_row();
+            $title = get_sub_field('team-name');
+            $image = get_sub_field('team-image')['sizes']['thumbnail'];
+            $content = get_sub_field('team-content'); ?>
+
+            <div class="col-xs-12 col-md-6 instance">
+              <div class="item">
+                <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>">
+                <h4><?php echo $title; ?></h4><?php echo $content; ?>
+              </div>
+            </div>
+
+            <?php endwhile; ?>
+          </div>
+        <?php endif; ?>
+
     </div> <!-- container -->
 
     <?php

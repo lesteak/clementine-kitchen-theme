@@ -20,7 +20,7 @@ $slideshow = get_field('slideshow');
     </div> <!-- hero -->
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-xs-center">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-xs-center">
           <div class="intro-tag">
             <?php the_content(); ?>
           </div>
@@ -38,20 +38,23 @@ $slideshow = get_field('slideshow');
         $posts = get_posts( $args );
         foreach ( $posts as $post ) : setup_postdata( $post );
         $thumb = get_field('hero-thumb')['sizes']['large'];
-        ?>
-          <div class="col-xs-12 col-md-6">
-            <a href="<?php the_permalink(); ?>" class="text-uppercase overlay text-xs-center">
-              <?php if($thumb): ?>
-                <img src="<?php echo $thumb; ?>" alt="<?php the_title(); ?>" class="img-fluid">
-              <?php endif; ?>
-              <div class="overlay-grad"></div>
-              <div class="overlay-content">
-                <h2><?php the_title(); ?></h2>
-                <span class="faux-button">Learn More</span>
-              </div>
-            </a>
-          </div> <!-- col -->
-        <?php endforeach;
+          if($thumb) :
+          ?>
+            <div class="col-xs-12 col-md-6">
+              <a href="<?php the_permalink(); ?>" class="text-uppercase overlay text-xs-center">
+                <?php if($thumb): ?>
+                  <img src="<?php echo $thumb; ?>" alt="<?php the_title(); ?>" class="img-fluid">
+                <?php endif; ?>
+                <div class="overlay-grad"></div>
+                <div class="overlay-content">
+                  <h2><?php the_title(); ?></h2>
+                  <span class="faux-button">Learn More</span>
+                </div>
+              </a>
+            </div> <!-- col -->
+          <?php
+          endif;
+        endforeach;
         wp_reset_postdata();?>
       </div> <!-- row -->
     </div> <!-- container -->

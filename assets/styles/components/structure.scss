@@ -116,6 +116,10 @@
 
 .intro-tag {
   margin-bottom:$margin*2;
+  font-size:22px;
+  letter-spacing: 1px;
+  //font-weight: bold;
+  //font-family: $headings-font-family;
 }
 
 .flipper {
@@ -157,16 +161,6 @@
     &:nth-of-type(even) {
       flex-direction: row-reverse;
       background: $brand-primary;
-    }
-  }
-
-  .profile {
-    margin-bottom:$margin;
-    margin-top:$margin;
-    img {
-      max-width:100%;
-      height:auto;
-      margin-bottom:$margin;
     }
   }
   @include media-breakpoint-down(sm) {
@@ -220,4 +214,63 @@
 
 .blog-summary {
   margin:$margin 0;
+}
+
+//team profile
+
+.profile {
+  margin-bottom:$margin;
+  margin-left:0;
+  margin-right:0;
+  .item {
+    padding:$margin*2;
+  }
+  .instance {
+    padding-left:0;
+    padding-right:0;
+  }
+  .instance:last-child {
+    .item {
+      background-color:$brand-primary;
+    }
+  }
+  img {
+    float:right;
+    border-radius: 50%;
+    margin-left:$margin;
+    margin-bottom:$margin;
+  }
+  @include media-breakpoint-down(sm) {
+    .item {
+      padding:$margin/2;
+      margin-bottom:$margin;
+    }
+  }
+}
+
+//arrows
+
+button.slick-arrow {
+  position: absolute;
+  top:50%;
+  z-index:1;
+  &.slick-next {
+    right:$margin/2;
+    background-image:url('../svg/arrow-right.svg');
+  }
+  &.slick-prev {
+    left:$margin/2;
+    background-image:url('../svg/arrow-left.svg');
+  }
+  &.slick-next, &.slick-prev {
+    width:50px;
+    height:50px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    &:before {
+      content:'';
+    }
+    &:hover {
+    }
+  }
 }

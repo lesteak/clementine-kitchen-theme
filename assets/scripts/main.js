@@ -80,7 +80,7 @@
           fade: true,
           cssEase: 'linear',
           dots: false,
-          arrows: false
+          arrows: true
         });
 
       }
