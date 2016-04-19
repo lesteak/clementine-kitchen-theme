@@ -39,7 +39,7 @@
   h1 {
     margin: 0;
     letter-spacing: rem(9);
-    font-size: rem(48);
+    font-size: rem(22);
     text-transform: uppercase;
     font-weight: 400;
     line-height: 1;
@@ -273,4 +273,35 @@ button.slick-arrow {
     &:hover {
     }
   }
+}
+
+//testimonials
+.testimonial-wrapper {
+  position: relative;
+  p {
+    margin-bottom:0;
+  }
+  button.slick-arrow {
+    position: absolute;
+    top:50%;
+    z-index:1;
+    &.slick-next {
+      right:-$margin*2;
+      background-image:url('../svg/arrow-right-black.svg');
+    }
+    &.slick-prev {
+      left:-$margin*2;
+      background-image:url('../svg/arrow-left-black.svg');
+    }
+  }
+}
+.openquote {
+  position: absolute;
+  font-size:100px;
+  line-height: 78px;
+  color:$brand-primary;
+  z-index:-1;
+  left:0;
+  font-family:$font-family-body-serif;
+  font-weight: bold;
 }

@@ -23,9 +23,17 @@ foreach ( $page as $post ) : setup_postdata( $post );
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-xs-center">
-					<div class="intro-tag">
-						<?php the_content(); ?>
+					<?php if( have_rows('testimonial') ): ?>
+					<div class="openquote">&ldquo;</div>
+					<div class="testimonial-wrapper">
+						<?php while ( have_rows('testimonial') ) : the_row(); ?>
+							<div class="testimonial-item">
+								<?php echo get_sub_field('quote'); ?>
+								<div class="author"><strong><?php echo get_sub_field('author'); ?></strong></div>
+							</div>
+						<?php endwhile; ?>
 					</div>
+					<?php endif; ?>
         </div> <!-- col -->
       </div> <!-- row -->
     <?php endforeach;
