@@ -48,7 +48,7 @@ foreach ( $page as $post ) : setup_postdata( $post );
 					);
 					$posts = get_posts( $args );
 					foreach ( $posts as $post ) : setup_postdata( $post );
-					$thumb = get_field('hero-thumb')['sizes']['large'];
+					$thumb = get_field('hero-thumb')['sizes']['cta'];
 					?>
 					<div class="col-xs-12 col-md-6">
 						<a href="<?php the_permalink(); ?>" class="text-uppercase overlay text-xs-center">

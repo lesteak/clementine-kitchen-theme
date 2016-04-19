@@ -130,5 +130,6 @@
       });
     }
   };
-  $(document).ready(UTIL.loadEvents);
+  $(UTIL.loadEvents);
+
 }(jQuery));  // Fully reference jQuery after this point.

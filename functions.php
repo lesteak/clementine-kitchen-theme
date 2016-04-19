@@ -54,3 +54,4 @@ function missing_dist_error_notice() {
 add_image_size( 'hero', 1980, 750, true );
 add_image_size( 'letterbox', 1980, 300, true );
 add_image_size( 'cropped', 600, 600, true );
+add_image_size( 'cta', 600, 400, true );
