@@ -8,6 +8,9 @@
   width: 100%;
 }
 
+h2 {
+  margin-bottom:$margin/2;
+}
 .hero {
   position: relative;
   color: #fff;
@@ -276,6 +279,9 @@ button.slick-arrow {
 }
 
 //testimonials
+.outer-wrapper {
+  margin-bottom:$margin*2;
+}
 .testimonial-wrapper {
   position: relative;
   p {
@@ -304,4 +310,22 @@ button.slick-arrow {
   left:0;
   font-family:$font-family-body-serif;
   font-weight: bold;
+}
+
+
+//Instagram feed
+#instafeed {
+  margin-bottom:$margin*2;
+  &.row {
+    margin-left:0;
+    margin-right:0;
+  }
+  .col-instafeed {
+    padding-left:0;
+    padding-right:0;
+  }
+  img {
+    width:100%;
+    height:auto;
+  }
 }

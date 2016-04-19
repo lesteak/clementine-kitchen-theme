@@ -24,21 +24,27 @@ foreach ( $page as $post ) : setup_postdata( $post );
       <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-xs-center">
 					<?php if( have_rows('testimonial') ): ?>
-					<div class="openquote">&ldquo;</div>
-					<div class="testimonial-wrapper">
-						<?php while ( have_rows('testimonial') ) : the_row(); ?>
-							<div class="testimonial-item">
-								<?php echo get_sub_field('quote'); ?>
-								<div class="author"><strong><?php echo get_sub_field('author'); ?></strong></div>
-							</div>
-						<?php endwhile; ?>
+					<div class="outer-wrapper">
+						<div class="openquote">&ldquo;</div>
+						<div class="testimonial-wrapper">
+							<?php while ( have_rows('testimonial') ) : the_row(); ?>
+								<div class="testimonial-item">
+									<?php echo get_sub_field('quote'); ?>
+									<div class="author"><strong><?php echo get_sub_field('author'); ?></strong></div>
+								</div>
+							<?php endwhile; ?>
+						</div>
 					</div>
 					<?php endif; ?>
         </div> <!-- col -->
       </div> <!-- row -->
+		</div>
     <?php endforeach;
     wp_reset_postdata(); ?>
 
+		<div id="instafeed" class="row"></div>
+
+		<div class="container">
 			<section class="blog-summary">
 				<div class="row">
 					<?php

@@ -108,8 +108,18 @@
           fade: true,
           cssEase: 'linear',
           dots: false,
-          arrows: true
+          arrows: false
         });
+
+        var feed = new Instafeed({
+          get: 'user',
+          userId: '3130462414',
+          accessToken: '3130462414.1677ed0.2aae7962ffd04940bcb04c69cb7dc28b',
+          template: '<div class="col-xs-6 col-sm-4 col-md-2 col-instafeed"><img src="{{image}}" /></div>',
+          resolution: 'standard_resolution',
+          limit: 6
+        });
+        feed.run();
       }
     }
   };

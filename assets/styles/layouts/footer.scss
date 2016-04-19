@@ -20,3 +20,22 @@
   }
 
 }
+
+ul.social {
+  list-style: none;
+  text-align: center;
+  margin:0;
+  padding:0;
+  margin-bottom:$margin/4;
+  li {
+    display: inline-block;
+  }
+  svg {
+    width:rem(40);
+    height:rem(40);
+    fill:white;
+    &:hover {
+      fill:$brand-secondary;
+    }
+  }
+}
