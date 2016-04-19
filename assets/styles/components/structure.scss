@@ -301,15 +301,22 @@ button.slick-arrow {
     }
   }
 }
-.openquote {
+.openquote, .closequote {
   position: absolute;
   font-size:100px;
   line-height: 78px;
   color:$brand-primary;
   z-index:-1;
-  left:0;
   font-family:$font-family-body-serif;
   font-weight: bold;
+}
+.openquote {
+  left:0;
+  top:0;
+}
+.closequote {
+  right:0;
+  top:0;
 }
 
 

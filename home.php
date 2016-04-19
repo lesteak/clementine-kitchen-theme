@@ -26,6 +26,7 @@ foreach ( $page as $post ) : setup_postdata( $post );
 					<?php if( have_rows('testimonial') ): ?>
 					<div class="outer-wrapper">
 						<div class="openquote">&ldquo;</div>
+						<div class="closequote">&rdquo;</div>
 						<div class="testimonial-wrapper">
 							<?php while ( have_rows('testimonial') ) : the_row(); ?>
 								<div class="testimonial-item">
