@@ -19,8 +19,6 @@ $hero = get_field('hero-image')['sizes']['letterbox'];
         </div> <!-- col -->
 
         <div class="col-xs-12">
-          <div class="js-form-result"></div>
-
           <form name="contact" class="contact-form">
             <div class="row">
               <!-- Name / Text input -->
@@ -73,6 +71,8 @@ $hero = get_field('hero-image')['sizes']['letterbox'];
               <div class="col-xs-12 text-xs-center">
                 <button type="submit" class="btn btn-primary"><?php _e('Submit', 'tofino'); ?></button>
               </div> <!-- col -->
+              
+              <div class="js-form-result"></div>
             </div> <!-- row -->
           </form>
         </div> <!-- col -->

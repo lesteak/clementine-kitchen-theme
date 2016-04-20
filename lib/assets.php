@@ -122,6 +122,7 @@ function main_script() {
     $main_js = '/dist/js/main.js';
     wp_register_script('tofino/js', get_template_directory_uri() . $main_js . '?v=' . filemtime(get_template_directory() . $main_js), array('jquery'), '', true);
     wp_enqueue_script('tofino/js');
+    localize_scripts();
   }
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\main_script');
