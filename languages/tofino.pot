@@ -170,7 +170,7 @@ msgstr ""
 msgid "Telephone Number"
 msgstr ""
 
-#: lib/theme-options.php:103, templates/content-page-contact.php:34
+#: lib/theme-options.php:103, templates/content-page-contact.php:32
 msgid "Email Address"
 msgstr ""
 
@@ -358,22 +358,22 @@ msgstr ""
 msgid "Invalid resposne (not JSON) received from the API endpoint."
 msgstr ""
 
-#: templates/content-page-contact.php:28
+#: templates/content-page-contact.php:26
 msgid "Name"
 msgstr ""
 
-#: templates/content-page-contact.php:29
+#: templates/content-page-contact.php:27
 msgid "Your name"
 msgstr ""
 
-#: templates/content-page-contact.php:35
+#: templates/content-page-contact.php:33
 msgid "Your email"
 msgstr ""
 
-#: templates/content-page-contact.php:68
+#: templates/content-page-contact.php:66
 msgid "Human tester"
 msgstr ""
 
-#: templates/content-page-contact.php:74
+#: templates/content-page-contact.php:72
 msgid "Submit"
 msgstr ""

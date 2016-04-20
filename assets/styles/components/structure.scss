@@ -348,3 +348,37 @@ button.slick-arrow {
     }
   }
 }
+
+
+//Form
+.wpcf7 {
+  label {
+    font-weight: bold;
+    margin-bottom:0;
+    margin-top:$margin/2;
+    font-size:rem(18);
+  }
+  input, textarea {
+    border:0;
+    width:100%;
+    padding:rem(10);
+    background-color:$brand-primary;
+    font-size: rem(18);
+  }
+  input[type="submit"] {
+    width:auto;
+    background:transparent;
+    font-size:1.75rem;
+    letter-spacing: rem(5);
+    padding:rem(8) rem(90) rem(4);
+    border:3px solid;
+    margin-top:$margin;
+    margin-bottom:$margin*2;
+    font-family: $headings-font-family;
+    text-transform: uppercase;
+    &:hover {
+      background-color:$brand-tertiary;
+      color:white;
+    }
+  }
+}
