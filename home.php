@@ -65,7 +65,7 @@ foreach ( $page as $post ) : setup_postdata( $post );
 							<div class="overlay-grad"></div>
 							<div class="overlay-content">
 								<h2><?php the_title(); ?></h2>
-								<span class="faux-button">Learn More</span>
+								<span class="faux-button">Read Article</span>
 							</div>
 						</a>
 					</div>

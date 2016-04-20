@@ -87,6 +87,46 @@ $count = 0;
               endif; ?>
         </div> <!-- col -->
       </div> <!-- row -->
+      <?php if( have_rows('menu') ): ?>
+        <?php $count = 1; ?>
+        <div class="row cta-area menus">
+          <?php while ( have_rows('menu') ) : the_row(); ?>
+            <?php $thumb = get_sub_field('image')['sizes']['cta']; ?>
+            <div class="col-xs-12 col-md-6">
+              <a href="#" class="text-uppercase overlay text-xs-center modal-link" data-toggle="modal" data-target="#menu<?php echo $count; ?>">
+                <?php if($thumb): ?>
+                  <img src="<?php echo $thumb; ?>" alt="<?php the_title(); ?>" class="img-fluid">
+                <?php endif; ?>
+                <div class="overlay-grad"></div>
+                <div class="overlay-content">
+                  <h3><?php echo get_sub_field('name'); ?></h3>
+                  <span class="faux-button">Read Menu</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="modal fade" id="menu<?php echo $count; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleMenu<?php echo $count; ?>">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="modal-title"><?php echo get_sub_field('name'); ?></h2>
+                    <em><?php echo get_sub_field('tagline'); ?></em>
+                  </div>
+                  <div class="modal-body">
+                    <?php if(get_sub_field('intro')) : ?>
+                      <strong class="intro"><?php echo get_sub_field('intro'); ?></strong>
+                    <?php endif; ?>
+                    <?php echo get_sub_field('content'); ?>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+          <?php $count ++; ?>
+          <?php endwhile; ?>
+        </div>
+      <?php endif; ?>
     </div> <!-- container -->
 
     <?php

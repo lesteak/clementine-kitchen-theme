@@ -83,6 +83,14 @@
           arrows: true
         });
 
+        $('.modal-link').on('click', function(){
+          var target = $(this).data('target');
+          location.hash = target;
+        })
+
+        if (location.hash) {
+          $(location.hash).modal('show');
+        }
       }
     },
     // Home page

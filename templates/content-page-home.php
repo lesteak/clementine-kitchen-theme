@@ -26,7 +26,7 @@ $slideshow = get_field('slideshow');
           </div>
         </div> <!-- col -->
       </div> <!-- row -->
-      <div class="row">
+      <div class="row cta-area">
         <?php
 
         $args = array(
