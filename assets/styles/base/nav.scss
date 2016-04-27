@@ -87,8 +87,7 @@
     }
 
     .dropdown-menu {
-      right: 0;
-      left: auto; // Reset the default from `.dropdown-menu`
+      @extend .dropdown-menu-right;
     }
   }
 }
