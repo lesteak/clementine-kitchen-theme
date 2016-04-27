@@ -150,7 +150,7 @@ h2 {
       margin: 0 0 rem(60);
     }
 
-    > [class|=col] {
+    > [class^=col-] {
       padding: 0;
     }
 

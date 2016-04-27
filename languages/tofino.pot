@@ -26,11 +26,11 @@ msgstr ""
 msgid "/dist directory not found. You probably want to run npm install and gulp on the command line."
 msgstr ""
 
-#: header.php:15
+#: header.php:35
 msgid "You are using an <strong>outdated</strong> browser. <a href=\"http://browsehappy.com/\">Update your browser</a> to improve your experience."
 msgstr ""
 
-#: header.php:26
+#: header.php:46
 msgid "Toggle Navigation Button"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr ""
 msgid "Telephone Number"
 msgstr ""
 
-#: lib/theme-options.php:103, templates/content-page-contact.php:32
+#: lib/theme-options.php:103
 msgid "Email Address"
 msgstr ""
 
@@ -356,24 +356,4 @@ msgstr ""
 
 #: lib/theme-tracker.php:158
 msgid "Invalid resposne (not JSON) received from the API endpoint."
-msgstr ""
-
-#: templates/content-page-contact.php:26
-msgid "Name"
-msgstr ""
-
-#: templates/content-page-contact.php:27
-msgid "Your name"
-msgstr ""
-
-#: templates/content-page-contact.php:33
-msgid "Your email"
-msgstr ""
-
-#: templates/content-page-contact.php:66
-msgid "Human tester"
-msgstr ""
-
-#: templates/content-page-contact.php:72
-msgid "Submit"
 msgstr ""
