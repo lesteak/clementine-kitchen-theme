@@ -164,7 +164,7 @@ h2 {
       }
     }
 
-    > [class|=col]:last-of-type {
+    > [class^=col]:last-of-type {
       padding: rem(15);
       @include media-breakpoint-up(md) {
         padding: rem(60);
