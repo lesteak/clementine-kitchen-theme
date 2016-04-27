@@ -15,7 +15,9 @@ $hero = get_field('hero-image')['sizes']['letterbox'];
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-lg-8">
+          <div class="post-content">
             <?php the_content(); ?>
+          </div>
         </div> <!-- col -->
       </div> <!-- row -->
     </div> <!-- container -->

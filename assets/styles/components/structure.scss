@@ -51,6 +51,9 @@ h2 {
       font-size: rem(60);
     }
   }
+  img {
+    width:100%;
+  }
 }
 
 .container {
@@ -86,8 +89,9 @@ h2 {
     font-weight: 400;
     letter-spacing: rem(6);
     font-size: rem(28);
+    margin-bottom:0;
     @include media-breakpoint-up(lg) {
-      letter-spacing: rem(10);
+      letter-spacing: rem(8);
       font-size: rem(42);
     }
   }
@@ -106,13 +110,21 @@ h2 {
     }
   }
 
-  &:hover {
-    .overlay-grad {
-      background: rgba(0,0,0,0.6);
-    }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 
-    .faux-button {
-      display: inline-block;
+  @include media-breakpoint-up(lg) {
+    &:hover {
+      .overlay-grad {
+        background: rgba(0,0,0,0.6);
+        transition: background 0.8s;
+      }
+      .faux-button {
+        display: inline-block;
+        animation: fadeIn 1s;
+      }
     }
   }
 }
@@ -121,8 +133,6 @@ h2 {
   margin-bottom:$margin*2;
   font-size:22px;
   letter-spacing: 1px;
-  //font-weight: bold;
-  //font-family: $headings-font-family;
 }
 
 .flipper {
@@ -380,5 +390,12 @@ button.slick-arrow {
       background-color:$brand-tertiary;
       color:white;
     }
+  }
+}
+
+.post-content {
+  margin-bottom:$margin*2;
+  a {
+    color:$brand-secondary;
   }
 }
