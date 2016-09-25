@@ -5,6 +5,7 @@ $hero = get_field('hero-image')['sizes']['letterbox'];
     <?php if($hero): ?>
       <div class="hero">
         <img src="<?php echo $hero; ?>" alt="<?php the_title(); ?>" class="img-fluid">
+        <meta property="og:image" content="<?php echo $hero; ?>" />
         <div class="hero-overlay">&nbsp;</div>
         <div class="hero-content text-xs-center">
           <h1><?php the_title(); ?></h1>
