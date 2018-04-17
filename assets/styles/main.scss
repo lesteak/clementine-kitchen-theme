@@ -1,11 +1,13 @@
 @import 'common/variables';
 @import 'common/mixins';
-@import 'common/fonts';
 
 @import 'base/main'; // Tofino base styles
 
+@import 'common/fonts';
 @import 'components/buttons';
+@import 'components/slick-theme';
 @import 'components/nav';
 @import 'components/structure';
+@import 'components/modal';
 
 @import 'layouts/footer';

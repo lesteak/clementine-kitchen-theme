@@ -17,8 +17,41 @@
 
 // Return a rem value based on px. Uses $font-size-root from BS4 variables file.
 @function rem($px-value) {
-  $root-value: strip-unit($font-size-root);
+  $root-value: strip-unit(16);
   $value: strip-unit($px-value);
   $rem-value: ($value / $root-value) + rem;
   @return $rem-value;
+}
+
+@mixin valign {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+@mixin font-size($tag, $size-xs: 16, $size-sm: 16, $size-md: 16, $size-lg: 16, $size-xl: 16) {
+  #{$tag} {
+    font-size: $size-xs / 16 + 0rem;
+    @if $size-sm != 16 {
+      @include media-breakpoint-up(sm) {
+        font-size: $size-sm / 16 + 0rem;
+      }
+    }
+    @if $size-md != 16 {
+      @include media-breakpoint-up(md) {
+        font-size: $size-md / 16 + 0rem;
+      }
+    }
+    @if $size-lg != 16 {
+      @include media-breakpoint-up(lg) {
+        font-size: $size-lg / 16 + 0rem;
+      }
+    }
+    @if $size-xl != 16 {
+      @include media-breakpoint-up(xl) {
+        font-size: $size-xl / 16 + 0rem;
+      }
+    }
+  }
 }

@@ -1,4 +1,4 @@
-# Copyright (C) 2016 tofino
+# Copyright (C) 2018 tofino
 # This file is distributed under the same license as the tofino package.
 msgid ""
 msgstr ""
@@ -6,7 +6,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "/dist directory not found. You probably want to run npm install and gulp on the command line."
 msgstr ""
 
-#: header.php:15
+#: header.php:35
 msgid "You are using an <strong>outdated</strong> browser. <a href=\"http://browsehappy.com/\">Update your browser</a> to improve your experience."
 msgstr ""
 
-#: header.php:26
+#: header.php:46
 msgid "Toggle Navigation Button"
 msgstr ""
 
@@ -356,40 +356,4 @@ msgstr ""
 
 #: lib/theme-tracker.php:158
 msgid "Invalid resposne (not JSON) received from the API endpoint."
-msgstr ""
-
-#: templates/content-page-contact.php:15
-msgid "Name"
-msgstr ""
-
-#: templates/content-page-contact.php:16
-msgid "Your name"
-msgstr ""
-
-#: templates/content-page-contact.php:17
-msgid "So we know who you are."
-msgstr ""
-
-#: templates/content-page-contact.php:22
-msgid "Email address"
-msgstr ""
-
-#: templates/content-page-contact.php:23
-msgid "Your email"
-msgstr ""
-
-#: templates/content-page-contact.php:24
-msgid "We'll never share your email with anyone else."
-msgstr ""
-
-#: templates/content-page-contact.php:31
-msgid "Tell us what you want us to know."
-msgstr ""
-
-#: templates/content-page-contact.php:38
-msgid "Human tester"
-msgstr ""
-
-#: templates/content-page-contact.php:43
-msgid "Submit"
 msgstr ""

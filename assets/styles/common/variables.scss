@@ -1,8 +1,27 @@
-$enable-flex:   true;
+$enable-flex:   false;
 $border-radius: 0;
 
 //Hamburger Icon
-$bar-width: 1.2rem;
-$bar-height: 2px;
-$bar-spacing: 2px;
+$bar-width: 1rem;
+$bar-height: 3px;
+$bar-spacing: 3px;
 $color: #373a3c;
+
+$margin: 2rem;
+
+$brand-primary: #ECF6ED;
+$brand-secondary: #FF4824;
+$brand-tertiary: #29402B;
+
+$white: #fff;
+$black: #000;
+
+$font-family-sans-serif: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-body-serif: 'Georgia', serif;
+
+$headings-font-family: "Coustard";
+$headings-font-weight: 400;
+
+$font-size-h2: 38px;
+
+$color-even: #1c1d1d;

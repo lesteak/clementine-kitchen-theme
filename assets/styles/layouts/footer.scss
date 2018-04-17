@@ -1,0 +1,41 @@
+.footer-upper {
+  background: $brand-primary;
+  padding: rem(30) 0 rem(20);
+}
+
+.footer-lower {
+  background: $brand-tertiary;
+  color: #fff;
+  padding: rem(19.5) 0;
+
+  p {
+    font-size: rem(14);
+    margin: 0;
+  }
+
+  svg {
+    width: rem(10);
+    height: rem(20);
+    margin: rem(-5) 0;
+  }
+
+}
+
+ul.social {
+  list-style: none;
+  text-align: center;
+  margin:0;
+  padding:0;
+  margin-bottom:$margin/4;
+  li {
+    display: inline-block;
+  }
+  svg {
+    width:rem(40);
+    height:rem(40);
+    fill:white;
+    &:hover {
+      fill:$brand-secondary;
+    }
+  }
+}

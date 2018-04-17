@@ -1,0 +1,62 @@
+.cta-area.menus {
+  .modal {
+    .modal-dialog {
+      @include media-breakpoint-up(xs) {
+        width:100%;
+      }
+      @include media-breakpoint-up(md) {
+        max-width: 850px;
+      }
+    }
+    h2.modal-title {
+      font-size:rem(28);
+    }
+    .modal-body {
+      padding:$margin;
+      strong {
+        display: block;
+        margin-bottom:$margin;
+      }
+      ul {
+        list-style: none;
+        padding-left:rem(34);
+        margin-bottom:$margin;
+        margin-top:$margin/3;
+      }
+      li {
+        //letter-spacing: 1px;
+        margin-bottom:rem(2);
+        &:nth-of-type(even) {
+          color:$color-even;
+        }
+      }
+      h2 {
+        font-size:rem(22);
+        margin-top:$margin;
+        margin-bottom:$margin;
+        &:first-of-type {
+          margin-top:0;
+        }
+      }
+      h3 {
+        font-family:$font-family-sans-serif;
+        letter-spacing: 0;
+        text-transform: none;
+        font-weight:bold;
+        font-size:rem(20);
+        padding-left:30px;
+        position: relative;
+        &:before {
+          content:'';
+          width:22px;
+          height:24px;
+          background-image:url(../svg/logo-clementine.svg);
+          background-size:contain;
+          background-position: 50%;
+          position: absolute;
+          left:0;
+        }
+      }
+    }
+  }
+}

@@ -1,58 +1,24 @@
-<main>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <?php while (have_posts()) : the_post(); ?>
+<?php while (have_posts()) : the_post();
+$hero = get_field('hero-image')['sizes']['letterbox'];
+?>
+  <main>
+    <?php if($hero): ?>
+      <div class="hero">
+        <img src="<?php echo $hero; ?>" alt="<?php the_title(); ?>" class="img-fluid">
+        <div class="hero-overlay">&nbsp;</div>
+        <div class="hero-content text-xs-center">
           <h1><?php the_title(); ?></h1>
+        </div> <!-- hero-content -->
+      </div> <!-- hero -->
+    <?php endif; ?>
 
-          <!-- Empty div for form response -->
-          <div class="js-form-result"></div>
-
-          <form name="contact" class="contact-form">
-
-            <!-- Name / Text input -->
-            <fieldset class="form-group">
-              <label for="name"><?php _e('Name', 'tofino'); ?></label>
-              <input type="text" name="name" class="form-control" id="name" placeholder="<?php _e('Your name', 'tofino'); ?>" required="required">
-              <small class="text-muted"><?php _e("So we know who you are.", 'tofino'); ?></small>
-            </fieldset>
-
-            <!-- Email address -->
-            <fieldset class="form-group">
-              <label for="email"><?php _e('Email address', 'tofino'); ?></label>
-              <input type="email" name="email" class="form-control" id="email" placeholder="<?php _e('Your email', 'tofino'); ?>" required="required">
-              <small class="text-muted"><?php _e("We'll never share your email with anyone else.", 'tofino'); ?></small>
-            </fieldset>
-
-            <!-- Message / Textarea -->
-            <fieldset class="form-group">
-             <label for="message">Message</label>
-             <textarea class="form-control" name="message" id="message" rows="3" placeholder="Message" required="required"></textarea>
-             <small class="text-muted"><?php _e("Tell us what you want us to know.", 'tofino'); ?></small>
-           </fieldset>
-
-          <?php if (true == ot_get_option('enable_captcha_checkbox')) : ?>
-            <!-- Not a Robot -->
-            <fieldset class="form-group">
-              <div class="g-recaptcha" data-size="normal" data-theme="light" data-sitekey="<?php echo ot_get_option('captcha_site_key'); ?>"></div>
-              <small class="text-muted"><?php _e('Human tester', 'tofino'); ?></small>
-              <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
-            </fieldset><?php
-          endif; ?>
-
-           <button type="submit" class="btn btn-primary"><?php _e('Submit', 'tofino'); ?></button>
-
-          </form>
-        <?php endwhile; ?>
-      </div>
-      <div class="col-xs-12 col-sm-4 col-sm-offset-2">
-        <address>
-        <?php echo nl2br(ot_shortcode('address')); ?>
-        </address>
-
-        <?php echo ot_shortcode('telephone_number'); ?><br>
-        <?php echo ot_shortcode('email_address'); ?>
-      </div>
-    </div>
-  </div>
-</main>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 text-xs-center">
+            <?php the_content(); ?>
+        </div> <!-- col -->
+      </div> <!-- row -->
+      <?php echo do_shortcode('[contact-form-7 id="4" title="Contact form 1"]'); ?>
+    </div> <!-- container -->
+  </main>
+<?php endwhile; ?>
