@@ -399,3 +399,52 @@ button.slick-arrow {
     color:$brand-secondary;
   }
 }
+
+.preview-item {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 66%;
+  background-size: cover;
+  background-position: 50%;
+  margin-bottom: 0.9375rem * 2;
+  font-size: 0.875em;
+
+  .preview-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.3);
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  h2 {
+    font-size: 2.5em;
+    color: $white;
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: $white;
+  border: 3px solid $white;
+  transition: background-color 0.5s;
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: $white;
+    border: 3px solid $white;
+    transition: background-color 0.2s;
+  }
+}

@@ -55,18 +55,15 @@ foreach ( $page as $post ) : setup_postdata( $post );
 					);
 					$posts = get_posts( $args );
 					foreach ( $posts as $post ) : setup_postdata( $post );
-					$thumb = get_field('hero-thumb')['sizes']['cta'];
+          $thumb = get_field('hero-thumb')['sizes']['cta'];
 					?>
 					<div class="col-xs-12 col-md-6">
-						<a href="<?php the_permalink(); ?>" class="text-uppercase overlay text-xs-center">
-							<?php if($thumb): ?>
-								<img src="<?php echo $thumb; ?>" alt="<?php the_title(); ?>" class="img-fluid">
-							<?php endif; ?>
-							<div class="overlay-grad"></div>
-							<div class="overlay-content">
-								<h2><?php the_title(); ?></h2>
-								<span class="faux-button">Read Article</span>
-							</div>
+						<a href="<?php the_permalink(); ?>" class="preview-item" style="background-image: url('<?php echo $thumb; ?>')">
+              <div class="preview-overlay"></div>
+              <div class="content">
+                <h2><?php the_title(); ?></h2>
+                <span class="btn btn-secondary">Read Article</span>
+              </div>
 						</a>
 					</div>
 					<?php endforeach;
