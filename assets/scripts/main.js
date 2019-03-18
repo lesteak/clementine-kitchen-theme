@@ -34,7 +34,7 @@
           // },
           timeout: 2000
         };
-        (function () {
+        (function() {
           var wf = document.createElement('script');
           wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
           wf.type = 'text/javascript';
@@ -83,7 +83,7 @@
           arrows: true
         });
 
-        $('.modal-link').on('click', function(){
+        $('.modal-link').on('click', function() {
           var target = $(this).data('target');
           location.hash = target;
         })
@@ -112,22 +112,12 @@
         $('.testimonial-wrapper').slick({
           infinite: true,
           autoplay: true,
-          autoplaySpeed: 2500,
+          autoplaySpeed: 5000,
           fade: true,
           cssEase: 'linear',
           dots: false,
-          arrows: false
+          arrows: true
         });
-
-        var feed = new Instafeed({
-          get: 'user',
-          userId: '3130462414',
-          accessToken: '3130462414.1677ed0.2aae7962ffd04940bcb04c69cb7dc28b',
-          template: '<div class="col-xs-6 col-sm-4 col-md-2 col-instafeed"><img src="{{image}}" /></div>',
-          resolution: 'standard_resolution',
-          limit: 12
-        });
-        feed.run();
       }
     }
   };

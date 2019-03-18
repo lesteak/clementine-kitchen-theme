@@ -43,35 +43,8 @@ foreach ( $page as $post ) : setup_postdata( $post );
     <?php endforeach;
     wp_reset_postdata(); ?>
 
-		<div id="instafeed" class="row"></div>
-
-		<div class="container">
-			<section class="blog-summary">
-				<div class="row">
-					<?php
-					$args = array(
-						'post_type' => 'post',
-						'limit' => -1
-					);
-					$posts = get_posts( $args );
-					foreach ( $posts as $post ) : setup_postdata( $post );
-          $thumb = get_field('hero-thumb')['sizes']['cta'];
-					?>
-					<div class="col-xs-12 col-md-6">
-						<a href="<?php the_permalink(); ?>" class="preview-item" style="background-image: url('<?php echo $thumb; ?>')">
-              <div class="preview-overlay"></div>
-              <div class="content">
-                <h2><?php the_title(); ?></h2>
-                <span class="btn btn-secondary">Read Article</span>
-              </div>
-						</a>
-					</div>
-					<?php endforeach;
-					wp_reset_postdata(); ?>
-				</div>
-			</section>
-    </div> <!-- container -->
-
+    <?php echo do_shortcode('[instagram-feed]'); ?>
+    
     <?php
     $args = array(
     	'name'           => 'get-inspired',

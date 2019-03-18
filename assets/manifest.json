@@ -28,7 +28,7 @@
     "fonts": "assets/fonts/"
   },
   "config": {
-    "devUrl": "http://clementine.test",
+    "devUrl": "http://clementine.loc",
     "stagingUrl": "http://clementine.stage.yadda.co.uk"
   }
 }

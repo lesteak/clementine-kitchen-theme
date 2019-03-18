@@ -22,7 +22,7 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <p>&copy; <?php bloginfo('name'); ?> <?php echo current_time('Y'); ?> All rights reserved. <a href="http://yadda.co.uk" target="_blank">Site by <?php echo svg('icon-bolt'); ?></a></p>
+          <p>&copy; <?php bloginfo('name'); ?> <?php echo current_time('Y'); ?> All rights reserved. <a href="http://xinc.digital" target="_blank">Site by Xinc</a></p>
         </div> <!-- col -->
       </div> <!-- row -->
     </div> <!-- container -->

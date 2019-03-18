@@ -57,7 +57,7 @@
     "gulp-phpcs": "~1.0.0",
     "gulp-plumber": "~1.1.0",
     "gulp-rename": "~1.2.2",
-    "gulp-sass": "~2.2.0",
+    "gulp-sass": "~4.0",
     "gulp-sass-lint": "~1.1.0",
     "gulp-sort": "~1.1.1",
     "gulp-sourcemaps": "~1.6.0",
@@ -71,5 +71,8 @@
     "jshint-stylish": "~2.1.0",
     "merge-stream": "~1.0.0",
     "yargs": "~3.32.0"
+  },
+  "dependencies": {
+    "fsevents": "^1.2.7"
   }
 }

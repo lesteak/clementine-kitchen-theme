@@ -69,12 +69,11 @@ $position = get_field('position');
           <div class="row profile">
             <?php while ( have_rows('team-row') ) : the_row();
             $title = get_sub_field('team-name');
-            $image = get_sub_field('team-image')['sizes']['thumbnail'];
+            $image = get_sub_field('team-image')['sizes']['large'];
             $content = get_sub_field('team-content'); ?>
 
             <div class="col-xs-12 col-md-6 instance">
               <div class="item">
-                <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>">
                 <h4><?php echo $title; ?></h4><?php echo $content; ?>
               </div>
             </div>
