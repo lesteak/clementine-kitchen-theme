@@ -31,13 +31,13 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
  * Show maintenance mode message
  */
 function show_maintenance_message() {
-  if (ot_get_option('maintenance_mode_enabled')) { ?>
+  if (tofino_get_option('maintenance_mode_enabled')) { ?>
     <div class="error notice">
-      <p><strong><?php echo __('Maintenance Mode', 'tofino') . '</strong> - ' . ot_get_option('maintenance_mode_text'); ?></p>
+      <p><strong><?php echo __('Maintenance Mode', 'tofino') . '</strong> - ' . tofino_get_option('maintenance_mode_text'); ?></p>
     </div><?php
 
     if (!isset($_COOKIE['tofino_maintenance_alert_dismissed'])) {
-      echo '<div class="maintenance-mode-alert"><h1>' . __('Maintenance Mode', 'tofino') . '</h1><p>' . ot_get_option('maintenance_mode_text') . '</p><button>' . __('I understand', 'tofino') . '</button></div>';
+      echo '<div class="maintenance-mode-alert"><h1>' . __('Maintenance Mode', 'tofino') . '</h1><p>' . tofino_get_option('maintenance_mode_text') . '</p><button>' . __('I understand', 'tofino') . '</button></div>';
     }
   }
 }

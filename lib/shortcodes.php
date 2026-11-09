@@ -46,7 +46,7 @@ function copyright() {
 add_shortcode('copyright', 'copyright');
 
 //Get a theme option as a shortcode. Only for text based values.
-function ot_shortcode($atts) {
+function option_shortcode($atts) {
   if (gettype($atts) === 'string') {
     $atts = array(
       'id' => $atts
@@ -58,13 +58,13 @@ function ot_shortcode($atts) {
     'default' => ''
   ), $atts, 'option');
 
-  return ot_get_option($atts['id'], $atts['default']);
+  return tofino_get_option($atts['id'], $atts['default']);
 }
 
-add_shortcode('option', 'ot_shortcode');
+add_shortcode('option', 'option_shortcode');
 
 function social_icons($atts = array()) {
-  $social_links = ot_get_option('social_links', array());
+  $social_links = tofino_get_option('social_links', array());
   $output = '';
 
   $atts = shortcode_atts(array(

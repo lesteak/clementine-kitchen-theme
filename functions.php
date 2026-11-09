@@ -9,6 +9,9 @@ $theme_config = [
   ]
 ];
 
+// Always available, even before `composer dump-autoload` has been run on deploy.
+require_once get_template_directory() . '/lib/options.php';
+
 /**
  * Tofino includes
  *
