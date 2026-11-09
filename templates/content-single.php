@@ -1,10 +1,10 @@
 <?php while (have_posts()) : the_post();
-$hero = get_field('hero-image')['sizes']['letterbox'];
+$hero = get_field('hero-image');
 ?>
   <main>
     <?php if($hero): ?>
       <div class="hero">
-        <img src="<?php echo $hero; ?>" alt="<?php the_title(); ?>" class="img-fluid">
+        <?php echo tofino_image($hero, 'letterbox', array('alt' => get_the_title())); ?>
         <meta property="og:image" content="<?php echo $hero; ?>" />
         <div class="hero-overlay">&nbsp;</div>
         <div class="hero-content text-xs-center">

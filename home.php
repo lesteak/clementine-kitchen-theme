@@ -7,12 +7,12 @@ $args = array(
 );
 $page = get_posts( $args );
 foreach ( $page as $post ) : setup_postdata( $post );
-  $hero = get_field('hero-image')['sizes']['letterbox'];
+  $hero = get_field('hero-image');
 ?>
   <main>
     <?php if($hero): ?>
       <div class="hero">
-        <img src="<?php echo $hero; ?>" alt="<?php the_title(); ?>" class="img-fluid">
+        <?php echo tofino_image($hero, 'letterbox', array('alt' => get_the_title())); ?>
         <div class="hero-overlay">&nbsp;</div>
         <div class="hero-content text-xs-center">
           <h1><?php the_title(); ?></h1>
@@ -70,11 +70,11 @@ foreach ( $page as $post ) : setup_postdata( $post );
       $posts = get_posts( $args );
 
       foreach ( $posts as $post ) : setup_postdata( $post );
-      $hero = get_field('hero-image')['sizes']['letterbox'];
+      $hero = get_field('hero-image');
       if($hero):
     ?>
       <a class="hero" href="<?php the_permalink(); ?>">
-        <img src="<?php echo $hero; ?>" alt="<?php the_title(); ?>" class="img-fluid">
+        <?php echo tofino_image($hero, 'letterbox', array('alt' => get_the_title())); ?>
         <div class="hero-overlay">&nbsp;</div>
         <div class="hero-content text-xs-center">
           <h1><?php the_title(); ?></h1>

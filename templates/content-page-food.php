@@ -1,6 +1,6 @@
 
 <?php while (have_posts()) : the_post();
-$hero = get_field('hero-image')['sizes']['letterbox'];
+$hero = get_field('hero-image');
 $team = get_field('team-row');
 $profile_run = false;
 $count = 0;
@@ -8,7 +8,7 @@ $count = 0;
   <main>
     <?php if($hero): ?>
       <div class="hero">
-        <img src="<?php echo $hero; ?>" alt="<?php the_title(); ?>" class="img-fluid">
+        <?php echo tofino_image($hero, 'letterbox', array('alt' => get_the_title())); ?>
         <div class="hero-overlay">&nbsp;</div>
         <div class="hero-content text-xs-center">
           <h1><?php the_title(); ?></h1>
@@ -45,7 +45,7 @@ $count = 0;
                     <div class="col-xs-12 col-md-6 <?php echo ($count%2 == 0 ) ? 'col-md-push-6' : ''; ?>">
                       <div class="slick-wrap">
                         <?php foreach($images as $image) : ?>
-                          <img src="<?php echo $image['sizes']['cropped']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
+                          <?php echo tofino_image($image, 'cropped'); ?>
                         <?php endforeach; ?>
                       </div>
                     </div> <!-- col -->
@@ -91,11 +91,11 @@ $count = 0;
         <?php $count = 1; ?>
         <div class="row cta-area menus">
           <?php while ( have_rows('menu') ) : the_row(); ?>
-            <?php $thumb = get_sub_field('image')['sizes']['cta']; ?>
+            <?php $thumb = get_sub_field('image'); ?>
             <div class="col-xs-12 col-md-6">
               <a href="#" class="text-uppercase overlay text-xs-center modal-link" data-toggle="modal" data-target="#menu<?php echo $count; ?>">
                 <?php if($thumb): ?>
-                  <img src="<?php echo $thumb; ?>" alt="<?php the_title(); ?>" class="img-fluid">
+                  <?php echo tofino_image($thumb, 'cta', array('alt' => get_the_title())); ?>
                 <?php endif; ?>
                 <div class="overlay-grad"></div>
                 <div class="overlay-content">
@@ -147,11 +147,11 @@ $count = 0;
       $posts = get_posts( $args );
 
       foreach ( $posts as $post ) : setup_postdata( $post );
-      $hero = get_field('hero-image')['sizes']['letterbox'];
+      $hero = get_field('hero-image');
       if($hero):
     ?>
       <a class="hero hidden-sm-down" href="<?php the_permalink(); ?>">
-        <img src="<?php echo $hero; ?>" alt="<?php the_title(); ?>" class="img-fluid">
+        <?php echo tofino_image($hero, 'letterbox', array('alt' => get_the_title())); ?>
         <div class="hero-overlay">&nbsp;</div>
         <div class="hero-content text-xs-center">
           <h1><?php the_title(); ?></h1>

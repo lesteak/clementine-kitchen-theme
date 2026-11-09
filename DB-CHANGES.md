@@ -35,3 +35,26 @@ No posts, postmeta or other tables are touched. `theme_tracking_uid` (option) an
   **Sticky Footer** are ON live. The migration keeps this: body class `footer-sticky`, no `menu-fixed`.
 - Theme Tracker (phoned home to tracker.lambdacreatives.com; saved as disabled) was removed.
 - Option Tree's `ot_get_option()` no longer exists; the `[option id="..."]` shortcode now uses ACF.
+
+# Responsive images (srcset)
+
+Images are output via `tofino_image()` (`lib/images.php`), which uses `wp_get_attachment_image()`
+to emit `srcset`/`sizes`. New same-ratio crops registered in `functions.php`:
+`hero-medium` 1320x500, `hero-small` 660x250, `letterbox-medium` 1320x200, `letterbox-small` 660x100,
+`cropped-small` 300x300, `cta-small` 300x200. JPEG quality for generated crops is 75.
+
+## Deploy steps (after the theme is live)
+
+1. Back up the DB, then create the crops for existing uploads (adds files to `wp-content/uploads`, updates
+   `_wp_attachment_metadata` postmeta on each attachment; nothing is deleted):
+
+       wp media regenerate --only-missing --yes
+
+2. 13 attachments have no original file on disk (ids 535, 536, 546, 564, 569, 571, 572, 577, 582, 583, 589, 595, 610),
+   so step 1 reports "13 failed". Make their crops from the existing same-ratio files:
+
+       wp eval-file wp-content/themes/clementine-kitchen-theme/migrations/002-generate-srcset-sizes.php
+
+3. Purge caches: `wp cache flush && wp litespeed-purge all`.
+
+Both steps are idempotent. Rollback = deploy the previous release; extra crop files are harmless.

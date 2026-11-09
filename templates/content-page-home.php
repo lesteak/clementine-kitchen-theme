@@ -7,8 +7,8 @@ $slideshow = get_field('slideshow');
     <div class="hero">
       <div class="hero-images">
         <?php if( $slideshow ): ?>
-          <?php foreach( $slideshow as $image ): ?>
-            <img src="<?php echo $image['sizes']['hero']; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" />
+          <?php foreach( $slideshow as $i => $image ): ?>
+            <?php echo tofino_image($image, 'hero', $i === 0 ? array('loading' => 'eager', 'fetchpriority' => 'high') : array()); ?>
           <?php endforeach; ?>
         <?php endif; ?>
       </div> <!-- hero-images -->
@@ -37,13 +37,13 @@ $slideshow = get_field('slideshow');
 
         $posts = get_posts( $args );
         foreach ( $posts as $post ) : setup_postdata( $post );
-        $thumb = get_field('hero-thumb')['sizes']['cta'];
+        $thumb = get_field('hero-thumb');
           if($thumb) :
           ?>
             <div class="col-xs-12 col-md-6">
               <a href="<?php the_permalink(); ?>" class="text-uppercase overlay text-xs-center">
                 <?php if($thumb): ?>
-                  <img src="<?php echo $thumb; ?>" alt="<?php the_title(); ?>" class="img-fluid">
+                  <?php echo tofino_image($thumb, 'cta', array('alt' => get_the_title())); ?>
                 <?php endif; ?>
                 <div class="overlay-grad"></div>
                 <div class="overlay-content">

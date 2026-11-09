@@ -31,7 +31,7 @@ task('deploy:upload_dist', function() {
 
 task('deploy:theme_composer', function() {
   cd('{{release_path}}');
-  run('composer install --no-dev --no-interaction -o');
+  run('composer install --no-dev --no-plugins --ignore-platform-reqs --no-interaction -o');
   // run('~/composer.phar install --no-dev -o');
 })->desc('Remote composer install');
 
