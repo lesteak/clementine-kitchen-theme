@@ -5,6 +5,8 @@ require 'recipe/common.php';
 
 
 set('keep_releases', 4);
+// Keep the WP theme slug: the live symlink is themes/clementine-kitchen-theme (not themes/current)
+set('current_path', '{{deploy_path}}/clementine-kitchen-theme');
 // Start editable
 
 set('repository', 'git@github.com:lesteak/clementine-kitchen-theme.git');
